@@ -2,7 +2,7 @@ export class Range {
   constructor(public start: number, public end: number) {}
 
   public toString() {
-    return `[${this.start}-${this.end}]`;
+    return `[${this.start},${this.end}]`;
   }
 
   get isEmpty() {

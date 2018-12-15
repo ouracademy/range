@@ -1,4 +1,4 @@
-import { range, Range } from "./index";
+import { range } from "./index";
 
 describe("Range", () => {
   const aRange = range(1, 10);
@@ -12,7 +12,7 @@ describe("Range", () => {
   });
 
   it("has toString()", () => {
-    expect(String(aRange)).toBe(`[1-10]`);
+    expect(String(aRange)).toBe(`[1,10]`);
   });
 
   it("has isEmpty()", () => {
