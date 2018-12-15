@@ -15,3 +15,4 @@ export class Range {
 }
 
 export const range = (start: number, end: number) => new Range(start, end);
+export const interval = range;

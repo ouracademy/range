@@ -1,7 +1,11 @@
-import { range } from "./index";
+import { interval, range } from "./index";
 
 describe("Range", () => {
   const aRange = range(1, 10);
+
+  it("has interval as an alias", () => {
+    expect(interval).toBe(range);
+  });
 
   it("has a start", () => {
     expect(aRange.start).toBe(1);
