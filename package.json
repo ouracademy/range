@@ -1,6 +1,6 @@
 {
   "name": "@ouracademy/range",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A package for dealing with ranges",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
