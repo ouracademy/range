@@ -51,6 +51,12 @@ describe("Range", () => {
   });
 });
 
+describe("range defaults", () => {
+  it("should start with 0", () => {
+    expect(range(10).start).toBe(0);
+  });
+});
+
 test("upTo", () => {
   expect(range.upTo(10).includes(10)).toBeTruthy();
   expect(range.upTo(10).includes(0)).toBeTruthy();
