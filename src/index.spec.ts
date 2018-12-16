@@ -50,3 +50,10 @@ describe("Range", () => {
     expect(aRange).toEqual(range(1, 10));
   });
 });
+
+test("upTo", () => {
+  expect(range.upTo(10).includes(10)).toBeTruthy();
+  expect(range.upTo(10).includes(0)).toBeTruthy();
+  expect(range.upTo(10).includes(-5)).toBeTruthy();
+  expect(range.upTo(10).includes(Number.NEGATIVE_INFINITY)).toBeTruthy();
+});
