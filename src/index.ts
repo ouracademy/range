@@ -9,8 +9,18 @@ export class Range {
     return this.start >= this.end;
   }
 
-  public includes(arg: number): boolean {
+  public includes(arg: number | Range): boolean {
+    return arg instanceof Range
+      ? this.includesRange(arg)
+      : this.includesElement(arg);
+  }
+
+  private includesElement(arg: number): boolean {
     return this.start <= arg && arg <= this.end;
+  }
+
+  private includesRange(arg: Range): boolean {
+    return this.includes(arg.start) && this.includes(arg.end);
   }
 }
 

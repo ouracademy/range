@@ -25,11 +25,20 @@ describe("Range", () => {
     expect(emptyRange.isEmpty).toBeTruthy();
   });
 
-  it("includes", () => {
+  it("includes a number", () => {
     expect(aRange.includes(1)).toBeTruthy();
     expect(aRange.includes(10)).toBeTruthy();
     expect(aRange.includes(0)).toBeFalsy();
     expect(aRange.includes(11)).toBeFalsy();
+  });
+
+  it("includes other range", () => {
+    expect(aRange.includes(range(1, 10))).toBeTruthy();
+    expect(aRange.includes(range(2, 10))).toBeTruthy();
+    expect(aRange.includes(range(1, 9))).toBeTruthy();
+
+    expect(aRange.includes(range(0, 10))).toBeFalsy();
+    expect(aRange.includes(range(1, 11))).toBeFalsy();
   });
 
   it("equals other range", () => {
