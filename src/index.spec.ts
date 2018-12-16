@@ -15,6 +15,11 @@ describe("Range", () => {
     expect(aRange.end).toBe(10);
   });
 
+  it("has length", () => {
+    expect(aRange.length).toBe(10);
+    expect(range(2, 10).length).toBe(9);
+  });
+
   it("has toString()", () => {
     expect(String(aRange)).toBe(`[1,10]`);
   });

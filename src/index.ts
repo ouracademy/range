@@ -9,6 +9,10 @@ export class Range {
     return this.start >= this.end;
   }
 
+  get length() {
+    return this.end - this.start + 1;
+  }
+
   public includes(arg: number | Range): boolean {
     return arg instanceof Range
       ? this.includesRange(arg)
