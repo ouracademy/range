@@ -1,4 +1,4 @@
-import { interval, range } from "./index";
+import { emptyRange, interval, range } from "./index";
 
 describe("Range", () => {
   const aRange = range(1, 10);
@@ -22,6 +22,7 @@ describe("Range", () => {
   it("has isEmpty()", () => {
     expect(aRange.isEmpty).toBeFalsy();
     expect(range(10, 10).isEmpty).toBeTruthy();
+    expect(emptyRange.isEmpty).toBeTruthy();
   });
 
   it("includes", () => {
@@ -29,5 +30,9 @@ describe("Range", () => {
     expect(aRange.includes(10)).toBeTruthy();
     expect(aRange.includes(0)).toBeFalsy();
     expect(aRange.includes(11)).toBeFalsy();
+  });
+
+  it("equals other range", () => {
+    expect(aRange).toEqual(range(1, 10));
   });
 });

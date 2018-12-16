@@ -16,3 +16,8 @@ export class Range {
 
 export const range = (start: number, end: number) => new Range(start, end);
 export const interval = range;
+
+/**
+ * Use it as a special case pattern.
+ */
+export const emptyRange = range(1, 1);
