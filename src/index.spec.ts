@@ -77,6 +77,16 @@ describe("Range", () => {
       expect(it.next().done).toBeTruthy();
     });
   });
+
+  describe("toArray()", () => {
+    it("default step=1", () => {
+      expect(aRange.toArray()).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    });
+
+    it("step=4", () => {
+      expect(aRange.toArray(4)).toEqual([1, 5, 9]);
+    });
+  });
 });
 
 describe("range defaults", () => {

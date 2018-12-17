@@ -31,8 +31,11 @@ aRange.includes(range(2, 10)); // true
 aRange.includes(range(0, 10)); // false
 aRange.includes(range(1, 11)); // false
 
-aRange.iterate(); // iterator 1, 2, ...10
+aRange.iterate(); // iterator 1, 2 ...10
 aRange.iterate(2); // 1, 5, 9
+
+aRange.toArray(); // [1, 2 ... 10]
+aRange.toArray(2); // [1, 5, 9]
 ```
 
 See more examples in our specifications (.spec files)

@@ -19,6 +19,10 @@ export class Range {
     }
   }
 
+  public toArray(step = 1) {
+    return [...this.iterate(step)];
+  }
+
   public includes(arg: number | Range): boolean {
     return arg instanceof Range
       ? this.includesRange(arg)
