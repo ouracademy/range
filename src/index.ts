@@ -12,9 +12,16 @@ interface RangeFactory {
   (start: number, end: number): Range;
   /**
    * Creates a range starting from -infinity
+   * [-infinity, end]
    * @param end
    */
   upTo(end: number): Range;
+  /**
+   * Creates a range ending at infinity
+   * [start, infinity]
+   * @param end
+   */
+  startingOn(start: number): Range;
 }
 
 const createRangeFactory = (): RangeFactory => {
@@ -22,6 +29,8 @@ const createRangeFactory = (): RangeFactory => {
     return arg2 ? new Range(arg1, arg2) : new Range(0, arg2);
   }) as RangeFactory;
   result.upTo = (end: number) => new Range(Number.NEGATIVE_INFINITY, end);
+  result.startingOn = (start: number) =>
+    new Range(start, Number.POSITIVE_INFINITY);
 
   return result;
 };

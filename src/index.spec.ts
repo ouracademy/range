@@ -49,6 +49,14 @@ describe("Range", () => {
   it("equals other range", () => {
     expect(aRange).toEqual(range(1, 10));
   });
+
+  it("behavior in float numbers", () => {
+    expect(range(6, 10).includes(5.999999)).toBeFalsy();
+    expect(range(6, 10).includes(6.000001)).toBeTruthy();
+
+    expect(range(6, 10).includes(9.9999)).toBeTruthy();
+    expect(range(6, 10).includes(10.00000000001)).toBeFalsy();
+  });
 });
 
 describe("range defaults", () => {
@@ -62,4 +70,10 @@ test("upTo", () => {
   expect(range.upTo(10).includes(0)).toBeTruthy();
   expect(range.upTo(10).includes(-5)).toBeTruthy();
   expect(range.upTo(10).includes(Number.NEGATIVE_INFINITY)).toBeTruthy();
+});
+
+test("startingOn", () => {
+  expect(range.startingOn(10).includes(10)).toBeTruthy();
+  expect(range.startingOn(10).includes(10.0000001)).toBeTruthy();
+  expect(range.startingOn(10).includes(Number.POSITIVE_INFINITY)).toBeTruthy();
 });
