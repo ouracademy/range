@@ -44,6 +44,7 @@ describe("Range", () => {
 
     expect(aRange.includes(range(0, 10))).toBeFalsy();
     expect(aRange.includes(range(1, 11))).toBeFalsy();
+    expect(aRange.includes(range(20, 40))).toBeFalsy();
   });
 
   it("equals other range", () => {
