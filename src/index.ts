@@ -25,14 +25,13 @@ interface RangeFactory {
 }
 
 const createRangeFactory = (): RangeFactory => {
-  const result = ((arg1: number, arg2: number) => {
-    return arg2 ? new Range(arg1, arg2) : new Range(0, arg2);
-  }) as RangeFactory;
-  result.upTo = (end: number) => new Range(Number.NEGATIVE_INFINITY, end);
-  result.startingOn = (start: number) =>
-    new Range(start, Number.POSITIVE_INFINITY);
+  const result = (arg1: number, arg2: number) =>
+    arg2 ? new Range(arg1, arg2) : new Range(0, arg2);
 
-  return result;
+  result.upTo = (end: number) => new Range(-Infinity, end);
+  result.startingOn = (start: number) => new Range(start, Infinity);
+
+  return result as RangeFactory;
 };
 
 export const range = createRangeFactory();
