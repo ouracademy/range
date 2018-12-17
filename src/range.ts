@@ -10,6 +10,15 @@ export class Range {
   get length() {
     return this.end - this.start + 1;
   }
+
+  public *iterate(step = 1) {
+    let i = this.start;
+    while (this.includes(i)) {
+      yield i;
+      i += step;
+    }
+  }
+
   public includes(arg: number | Range): boolean {
     return arg instanceof Range
       ? this.includesRange(arg)

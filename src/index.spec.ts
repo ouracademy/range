@@ -57,6 +57,26 @@ describe("Range", () => {
     expect(range(6, 10).includes(9.9999)).toBeTruthy();
     expect(range(6, 10).includes(10.00000000001)).toBeFalsy();
   });
+
+  describe("lazy iterates", () => {
+    it("iterates default step=1", () => {
+      const it = aRange.iterate();
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].forEach(n => {
+        expect(it.next().value).toBe(n);
+      });
+
+      expect(it.next().done).toBeTruthy();
+    });
+
+    it("iterates step=4", () => {
+      const it = aRange.iterate(4);
+      [1, 5, 9].forEach(n => {
+        expect(it.next().value).toBe(n);
+      });
+
+      expect(it.next().done).toBeTruthy();
+    });
+  });
 });
 
 describe("range defaults", () => {
