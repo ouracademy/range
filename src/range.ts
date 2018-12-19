@@ -1,17 +1,19 @@
 export class Range {
   constructor(public start: number, public end: number) {}
 
-  public toString() {
+  public toString(): string {
     return `[${this.start},${this.end}]`;
   }
-  get isEmpty() {
+
+  get isEmpty(): boolean {
     return this.start >= this.end;
   }
-  get length() {
+
+  get length(): number {
     return this.end - this.start + 1;
   }
 
-  public *iterate(step = 1) {
+  public *iterate(step = 1): IterableIterator<number> {
     let i = this.start;
     while (this.includes(i)) {
       yield i;
@@ -19,7 +21,7 @@ export class Range {
     }
   }
 
-  public toArray(step = 1) {
+  public toArray(step = 1): number[] {
     return [...this.iterate(step)];
   }
 
