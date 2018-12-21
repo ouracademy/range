@@ -27,7 +27,7 @@ test('range has toString()', t => {
 
 test('range has isEmpty()', t => {
   t.false(aRange.isEmpty);
-  t.true(range(10, 10).isEmpty);
+  t.false(range(10, 10).isEmpty);
   t.true(emptyRange.isEmpty);
 });
 

@@ -52,4 +52,4 @@ export const interval = range;
 /**
  * Use it as a special case pattern.
  */
-export const emptyRange = range(1, 1);
+export const emptyRange = range(4, 1);

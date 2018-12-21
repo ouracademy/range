@@ -6,7 +6,7 @@ export class Range {
   }
 
   get isEmpty(): boolean {
-    return this.start >= this.end;
+    return this.start > this.end;
   }
 
   get length(): number {

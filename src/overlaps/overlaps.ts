@@ -1,6 +1,7 @@
+import instersection from '../intersection/intersection';
 import { Range } from '../range';
 
 const overlaps = (aRange: Range, otherRange: Range) =>
-  otherRange.includes(aRange.start) || otherRange.includes(aRange.end);
+  !instersection(aRange, otherRange).isEmpty;
 
 export default overlaps;
