@@ -1,6 +1,9 @@
 # Range
 
-A range of values (start, end) - aka interval
+A package for dealing with ranges (start, end) - aka interval
+written in typescript, but works with vanilla JS.
+
+More on [API docs](https://ouracademy.github.io/range/) or our specifications (.spec files) for more examples
 
 ## Motivation
 
@@ -19,7 +22,9 @@ for (let n of aRange.iterate(2)) console.log(n);
 ## Usage
 
 ```js
-const aRange = range(1, 10); // also if you like interval(1, 10)
+import { range } from '@ouracademy/range';
+
+const aRange = range(1, 10); // or interval(1, 10)
 
 String(aRange); // "[1,10]"
 String(range(15)); // "[0,15]"
@@ -31,15 +36,11 @@ aRange.includes(range(2, 10)); // true
 aRange.includes(range(0, 10)); // false
 aRange.includes(range(1, 11)); // false
 
-aRange.iterate(); // iterator 1, 2 ...10
+aRange.iterate(); // lazy evaluated - 1, 2 ...10
 aRange.iterate(2); // 1, 5, 9
 
 aRange.toArray(); // [1, 2 ... 10]
 aRange.toArray(2); // [1, 5, 9]
 ```
 
-See more examples in our specifications (.spec files)
-
-## Publish
-
-Bump a new version `npm version patch` & then publish it with: `npm publish --access public`
+There are other useful functions like: `intersection`, `overlaps` that could be found in the [API doc](https://ouracademy.github.io/range/).
