@@ -65,7 +65,9 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h1 id="range">Range</h1>
-				<p>A range of values (start, end) - aka interval</p>
+				<p>A package for dealing with ranges (start, end) - aka interval
+				written in typescript, but works with vanilla JS.</p>
+				<p>More on <a href="https://ouracademy.github.io/range/">API docs</a> or our specifications (.spec files) for more examples</p>
 				<h2 id="motivation">Motivation</h2>
 				<p>Well my motivation is just taste &amp; some useful methods</p>
 				<pre><code class="language-js"><span class="hljs-keyword">const</span> aRange = range(<span class="hljs-number">0</span>, <span class="hljs-number">5</span>);
@@ -76,7 +78,9 @@
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> n = <span class="hljs-number">0</span>; n &lt;= <span class="hljs-number">5</span>; n += <span class="hljs-number">2</span>) <span class="hljs-built_in">console</span>.log(n);
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> n <span class="hljs-keyword">of</span> aRange.iterate(<span class="hljs-number">2</span>)) <span class="hljs-built_in">console</span>.log(n);</code></pre>
 				<h2 id="usage">Usage</h2>
-				<pre><code class="language-js"><span class="hljs-keyword">const</span> aRange = range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>); <span class="hljs-comment">// also if you like interval(1, 10)</span>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { range } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ouracademy/range'</span>;
+
+<span class="hljs-keyword">const</span> aRange = range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>); <span class="hljs-comment">// or interval(1, 10)</span>
 
 <span class="hljs-built_in">String</span>(aRange); <span class="hljs-comment">// "[1,10]"</span>
 <span class="hljs-built_in">String</span>(range(<span class="hljs-number">15</span>)); <span class="hljs-comment">// "[0,15]"</span>
@@ -88,14 +92,12 @@ aRange.includes(range(<span class="hljs-number">2</span>, <span class="hljs-numb
 aRange.includes(range(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)); <span class="hljs-comment">// false</span>
 aRange.includes(range(<span class="hljs-number">1</span>, <span class="hljs-number">11</span>)); <span class="hljs-comment">// false</span>
 
-aRange.iterate(); <span class="hljs-comment">// iterator 1, 2 ...10</span>
+aRange.iterate(); <span class="hljs-comment">// lazy evaluated - 1, 2 ...10</span>
 aRange.iterate(<span class="hljs-number">2</span>); <span class="hljs-comment">// 1, 5, 9</span>
 
 aRange.toArray(); <span class="hljs-comment">// [1, 2 ... 10]</span>
 aRange.toArray(<span class="hljs-number">2</span>); <span class="hljs-comment">// [1, 5, 9]</span></code></pre>
-				<p>See more examples in our specifications (.spec files)</p>
-				<h2 id="publish">Publish</h2>
-				<p>Bump a new version <code>npm version patch</code> &amp; then publish it with: <code>npm publish --access public</code></p>
+				<p>There are other useful functions like: <code>intersection</code>, <code>overlaps</code> that could be found in the <a href="https://ouracademy.github.io/range/">API doc</a>.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -123,17 +125,26 @@ aRange.toArray(<span class="hljs-number">2</span>); <span class="hljs-comment">/
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="globals.html#max" class="tsd-kind-icon">max</a>
 					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#midpoint" class="tsd-kind-icon">midpoint</a>
+					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="globals.html#min" class="tsd-kind-icon">min</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#range" class="tsd-kind-icon">range</a>
 					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#centre" class="tsd-kind-icon">centre</a>
+					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#createrangefactory" class="tsd-kind-icon">create<wbr>Range<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#instersection" class="tsd-kind-icon">instersection</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isbefore" class="tsd-kind-icon">is<wbr>Before</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#overlaps" class="tsd-kind-icon">overlaps</a>
