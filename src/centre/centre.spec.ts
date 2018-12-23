@@ -1,6 +1,6 @@
 import test from 'ava';
 import { emptyRange, range } from '../factory';
-import centre, { midpoint } from './centre';
+import { centre, midpoint } from './centre';
 
 test('midpoint is an alias', t => {
   t.deepEqual(midpoint, centre);

@@ -2,7 +2,7 @@
 import test from 'ava';
 
 import { range } from '../factory';
-import intersection from './intersection';
+import { intersection } from './intersection';
 
 test('on no intersection get empty range', t => {
   t.true(intersection(range(1, 5), range(7, 12)).isEmpty);

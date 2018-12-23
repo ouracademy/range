@@ -11,8 +11,7 @@ import { Range } from '../range';
  * @param aRange
  * @see midpoint (as an alias)
  */
-const centre = (aRange: Range) =>
+export const centre = (aRange: Range) =>
   aRange.isEmpty ? undefined : (aRange.start + aRange.end) / 2;
 
 export const midpoint = centre;
-export default centre;

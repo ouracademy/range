@@ -10,7 +10,5 @@ import { Range } from '../range';
  * @param aRange
  * @param otherRange
  */
-const isBefore = (aRange: Range, otherRange: Range) =>
+export const isBefore = (aRange: Range, otherRange: Range) =>
   aRange.end <= otherRange.start;
-
-export default isBefore;

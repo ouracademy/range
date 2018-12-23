@@ -2,7 +2,7 @@
 import test from 'ava';
 
 import { range } from '../factory';
-import overlaps from './overlaps';
+import { overlaps } from './overlaps';
 
 test('no overlaps', t => {
   t.false(overlaps(range(1, 5), range(7, 12)));
