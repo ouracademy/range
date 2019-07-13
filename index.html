@@ -76,7 +76,7 @@
 <span class="hljs-keyword">if</span> (aRange.includes(myAge)) <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"I'm a baby."</span>);
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> n = <span class="hljs-number">0</span>; n &lt;= <span class="hljs-number">5</span>; n += <span class="hljs-number">2</span>) <span class="hljs-built_in">console</span>.log(n);
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> n <span class="hljs-keyword">of</span> aRange.iterate(<span class="hljs-number">2</span>)) <span class="hljs-built_in">console</span>.log(n);</code></pre>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> n <span class="hljs-keyword">of</span> aRange.step(<span class="hljs-number">2</span>)) <span class="hljs-built_in">console</span>.log(n);</code></pre>
 				<h2 id="usage">Usage</h2>
 				<pre><code class="language-js"><span class="hljs-keyword">import</span> { range } <span class="hljs-keyword">from</span> <span class="hljs-string">'@ouracademy/range'</span>;
 
@@ -92,8 +92,8 @@ aRange.includes(range(<span class="hljs-number">2</span>, <span class="hljs-numb
 aRange.includes(range(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)); <span class="hljs-comment">// false</span>
 aRange.includes(range(<span class="hljs-number">1</span>, <span class="hljs-number">11</span>)); <span class="hljs-comment">// false</span>
 
-aRange.iterate(); <span class="hljs-comment">// lazy evaluated - 1, 2 ...10</span>
-aRange.iterate(<span class="hljs-number">2</span>); <span class="hljs-comment">// 1, 5, 9</span>
+aRange.step(); <span class="hljs-comment">// lazy evaluated - 1, 2 ...10</span>
+aRange.step(<span class="hljs-number">2</span>); <span class="hljs-comment">// 1, 5, 9</span>
 
 aRange.toArray(); <span class="hljs-comment">// [1, 2 ... 10]</span>
 aRange.toArray(<span class="hljs-number">2</span>); <span class="hljs-comment">// [1, 5, 9]</span></code></pre>
