@@ -1,5 +1,5 @@
 // tslint:disable:no-expression-statement
-import test, { ExecutionContext, Macro } from 'ava';
+import test, { ExecutionContext } from 'ava';
 import { emptyRange, interval, range } from '.';
 
 const aRange = range(1, 10);
@@ -60,16 +60,16 @@ test('range behavior in float numbers', t => {
   t.false(range(6, 10).includes(10.00000000001));
 });
 
-const iterateMacro: Macro = (
+const iterateMacro = (
   t: ExecutionContext<{}>,
-  elements: number[],
-  iterate
+  input: number[],
+  expected: IterableIterator<number>
 ) => {
-  elements.forEach(n => {
-    t.is(iterate.next().value, n);
+  input.forEach(n => {
+    t.is(expected.next().value, n);
   });
 
-  t.true(iterate.next().done);
+  t.true(expected.next().done);
 };
 
 test(
