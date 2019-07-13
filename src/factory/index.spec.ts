@@ -76,13 +76,13 @@ test(
   'range lazy iterates default step=1',
   iterateMacro,
   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-  aRange.iterate()
+  aRange.step()
 );
 test(
   'range lazy iterates default step=4',
   iterateMacro,
   [1, 5, 9],
-  aRange.iterate(4)
+  aRange.step(4)
 );
 
 test('range toArray() default step=1', t => {

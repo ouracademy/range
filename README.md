@@ -16,7 +16,7 @@ if (0 <= myAge && myAge <= 5) console.log("I'm a baby.");
 if (aRange.includes(myAge)) console.log("I'm a baby.");
 
 for (let n = 0; n <= 5; n += 2) console.log(n);
-for (let n of aRange.iterate(2)) console.log(n);
+for (let n of aRange.step(2)) console.log(n);
 ```
 
 ## Usage
@@ -36,8 +36,8 @@ aRange.includes(range(2, 10)); // true
 aRange.includes(range(0, 10)); // false
 aRange.includes(range(1, 11)); // false
 
-aRange.iterate(); // lazy evaluated - 1, 2 ...10
-aRange.iterate(2); // 1, 5, 9
+aRange.step(); // lazy evaluated - 1, 2 ...10
+aRange.step(2); // 1, 5, 9
 
 aRange.toArray(); // [1, 2 ... 10]
 aRange.toArray(2); // [1, 5, 9]

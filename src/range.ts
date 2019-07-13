@@ -13,7 +13,8 @@ export class Range {
     return this.end - this.start + 1;
   }
 
-  public *iterate(step = 1): IterableIterator<number> {
+  public *step(by = 1): IterableIterator<number> {
+    const step = by;
     let i = this.start;
     while (this.includes(i)) {
       yield i;
@@ -22,7 +23,7 @@ export class Range {
   }
 
   public toArray(step = 1): number[] {
-    return [...this.iterate(step)];
+    return [...this.step(step)];
   }
 
   public includes(arg: number | Range): boolean {
